@@ -44,6 +44,7 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
 
     // car
     Route::get('cars', [TestController::class, 'index'])->name('cars.index');
+    Route::get('template', [TestController::class, 'finexo'])->name('finexo.index');
 
 });
 

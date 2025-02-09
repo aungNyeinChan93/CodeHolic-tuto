@@ -97,4 +97,11 @@ class TestController extends Controller
     {
         return view('tests.alltest.Cars.index');
     }
+
+    // finexo
+    public function finexo()
+    {
+        return view('tests.alltest.Finexo.index');
+
+    }
 }

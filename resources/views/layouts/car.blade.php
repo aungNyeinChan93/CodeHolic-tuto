@@ -18,6 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('CarTemplate/css/app.css') }}" />
     <link rel="stylesheet" href="{{ asset('CarTemplate/css/output.css') }}" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -93,7 +94,16 @@
     </main>
 
     <footer>
-
+        <div class="container bg-gray-200 rounded ">
+            <div class="footer-content">
+                <p>&copy; {{ date('Y') }} Car Findal Service. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"
