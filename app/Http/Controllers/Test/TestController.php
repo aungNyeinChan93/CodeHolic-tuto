@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Test;
 
-use App\Jobs\TestJob;
 use App\Models\User;
+use App\Jobs\TestJob;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
 
 class TestController extends Controller
 {
@@ -53,5 +54,28 @@ class TestController extends Controller
     public function to_route()
     {
         return to_route('tests.parameter', ['mm', 'toRoute', 7]);
+    }
+
+    public function view()
+    {
+        if (!View::exists('something')) {
+            dump('hit');
+        }
+        return View::first([
+            'something',
+            'tests.alltest.view'
+        ])
+            ->with('route', route('tests.view'))
+            ->with('appName', config('app.name'));
+    }
+
+    // directives
+
+    public function directives()
+    {
+        return view('tests.alltest.directives', [
+            'name' => 'Directives',
+            'users' => User::all(),
+        ]);
     }
 }

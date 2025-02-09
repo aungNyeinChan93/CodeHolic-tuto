@@ -22,6 +22,10 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
 
     Route::resource('users', UserController::class);
 
+    Route::get('view', [TestController::class, 'view'])->name('tests.view');
+
+    Route::get('directives', [TestController::class, 'directives'])->name('tests.directives');
+
 });
 
 // not found Page

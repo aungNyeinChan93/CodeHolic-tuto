@@ -12,7 +12,7 @@ class UserController extends Controller
     //index
     public function index()
     {
-        $users = User::query()->paginate(4);
+        $users = User::query()->simplePaginate(5);
         return view('tests.User.profile.index', compact('users'));
     }
 
