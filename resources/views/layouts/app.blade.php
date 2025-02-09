@@ -32,27 +32,24 @@
                         <ul class="flex items-center gap-6 text-sm">
                             <li>
                                 <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                    href="{{ route('home.index') }}">
+                                    href="{{ route('users.index') }}">
                                     Home
                                 </a>
                             </li>
 
-                            @auth
-                                <li>
-                                    <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        href="{{ route('users.create') }}">
-                                        Profile
-                                    </a>
-                                </li>
+                            <li>
+                                <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                    href="{{ route('users.create') }}">
+                                    Create
+                                </a>
+                            </li>
 
-                                <li>
-                                    <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        href="{{ route('users.index') }}">
-                                        Users
-                                    </a>
-                                </li>
-                            @endauth
-
+                            <li>
+                                <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                    href="#">
+                                    History
+                                </a>
+                            </li>
 
                             <li>
                                 <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
@@ -78,33 +75,19 @@
                     </nav>
 
                     <div class="flex items-center gap-4">
-                        @guest
-                            <div class="sm:flex sm:gap-4">
-                                <a class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm dark:hover:bg-teal-500"
-                                    href="{{ route('login') }}">
-                                    Login
+                        <div class="sm:flex sm:gap-4">
+                            <a class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm dark:hover:bg-teal-500"
+                                href="#">
+                                Login
+                            </a>
+
+                            <div class="hidden sm:flex">
+                                <a class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+                                    href="#">
+                                    Register
                                 </a>
-
-                                <div class="hidden sm:flex">
-                                    <a class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
-                                        href="{{ route('register') }}">
-                                        Register
-                                    </a>
-                                </div>
                             </div>
-                        @endguest
-
-                        @auth
-                            <div class="sm:flex sm:gap-4">
-                                <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                    class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm dark:hover:bg-teal-500">
-                                    Logout
-                                </button>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                    @csrf
-                                </form>
-                            </div>
-                        @endauth
+                        </div>
 
                         <div class="block md:hidden">
                             <button

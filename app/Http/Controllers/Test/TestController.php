@@ -78,4 +78,18 @@ class TestController extends Controller
             'users' => User::all(),
         ]);
     }
+
+    // each
+    public function each()
+    {
+        return view('tests.alltest.each', [
+            'users' => User::all(),
+        ]);
+    }
+
+    // include
+    public function include()
+    {
+        return view('tests.alltest.include');
+    }
 }

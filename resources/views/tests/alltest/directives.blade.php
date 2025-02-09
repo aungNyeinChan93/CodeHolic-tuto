@@ -6,6 +6,8 @@
             $lang = 'mm';
             $cars = [];
             $red = 1; // fasty && trusty
+
+            $customers = ['mgmg', 'susu', 'koko'];
         @endphp
 
         @if ($appName && $name)
@@ -73,6 +75,12 @@
         </div>
 
         <div @style(['color:red ; background-color: blue' => true])>Style Directives</div>
+
+        @each('tests.alltest.customer', $customers, 'customer')
+
+        @foreach ($customers as $customer)
+            @include('tests.alltest.customer', ['customer' => $customer])
+        @endforeach
 
     </section>
 @endsection

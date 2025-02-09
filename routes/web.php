@@ -10,4 +10,4 @@ require_once __DIR__ . '/test.php';
 //     return view('welcome');
 // });
 
-Route::redirect('/', 'tests/users');
+Route::redirect('/', 'tests/home');
