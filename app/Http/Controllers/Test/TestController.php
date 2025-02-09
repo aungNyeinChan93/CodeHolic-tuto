@@ -92,4 +92,9 @@ class TestController extends Controller
     {
         return view('tests.alltest.include');
     }
+
+    public function index()
+    {
+        return view('tests.alltest.Cars.index');
+    }
 }

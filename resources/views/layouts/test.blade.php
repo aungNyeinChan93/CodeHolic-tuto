@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>@yield('title', 'My App') - {{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -120,9 +121,17 @@
             </div>
         </div>
     </header>
-    <main class="container mx-auto ">
+    <main class="container mx-auto h-screen w-full">
         @yield('content')
     </main>
+
+    <footer @yield('footer')>
+        <div class="bg-gray-800 text-white py-4">
+            <div class="container mx-auto text-center">
+                <p>&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

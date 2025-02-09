@@ -42,6 +42,9 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
     Route::post('login', [LoginController::class, 'store'])->name('login.store');
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+    // car
+    Route::get('cars', [TestController::class, 'index'])->name('cars.index');
+
 });
 
 // not found Page
