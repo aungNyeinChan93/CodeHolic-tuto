@@ -51,6 +51,12 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
     Route::get('cars', [TestController::class, 'index'])->name('cars.index');
     Route::get('template', [TestController::class, 'finexo'])->name('finexo.index');
 
+    // test
+    Route::get('component', [TestController::class, 'component'])->name('tests.component');
+
+
+
+
 });
 
 // not found Page

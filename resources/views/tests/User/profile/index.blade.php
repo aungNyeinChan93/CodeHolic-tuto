@@ -1,20 +1,22 @@
 @extends('layouts.test')
 
 @section('content')
-    <div class="w-full h-[600px] p-2  bg-gray-200 relative">
+
+    <div class="my-4 bg-gray-100 p-2 rounded">
         <h1 class="text-2xl text-center underline text-red-400">User Lists {{ $appName }}</h1>
         <p class="text-xl text-bold ">Total User {{ count($users) }}</p>
         @if (count($users) !== 0)
-            <ul>
+            <div class="grid grid-cols-4 gap-x-4 gap-y-2">
                 @foreach ($users as $user)
-                    <li>
-                        <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
-                    </li>
+                    <x-card>
+                        <x-slot:title>{{ $user->name }}</x-slot:title>
+                        {{ $user->email }}
+                        <x-slot:footer>{{ $user->created_at->format('d-m-Y h-m-s') }}</x-slot:footer>
+                    </x-card>
                 @endforeach
-            </ul>
+            </div>
         @endif
-
-        <div class=" absolute  bottom-0 right-4 mb-5">
+        <div class="">
             <div>
                 {{ $users->links() }}
             </div>

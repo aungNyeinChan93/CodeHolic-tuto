@@ -121,16 +121,18 @@
             </div>
         </div>
     </header>
-    <main class="container mx-auto h-100% w-full">
+    <main class="container mx-auto h-100 w-full mb-2">
         @yield('content')
     </main>
 
     <footer @yield('footer')>
-        <div class="bg-gray-800 text-white py-4">
-            <div class="container mx-auto text-center">
-                <p>&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+        @section('footer-links')
+            <div class="bg-gray-800 text-white py-4">
+                <div class="container mx-auto text-center">
+                    <p>&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+                </div>
             </div>
-        </div>
+        @show
     </footer>
 </body>
 

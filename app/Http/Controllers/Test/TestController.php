@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Test;
 
 use App\Models\User;
 use App\Jobs\TestJob;
+use App\View\Components\Example;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
@@ -95,7 +96,10 @@ class TestController extends Controller
 
     public function index()
     {
-        return view('tests.alltest.Cars.index');
+        $users = User::all();
+        return view('tests.alltest.Cars.index', [
+            'users' => $users,
+        ]);
     }
 
     // finexo
@@ -115,5 +119,12 @@ class TestController extends Controller
     public function register()
     {
         return view('tests.alltest.cars.register');
+    }
+
+    // component
+    public function component()
+    {
+        $user = User::first();
+        $test = new Example($user);
     }
 }
