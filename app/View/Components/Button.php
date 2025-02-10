@@ -3,8 +3,9 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Http;
 
 class Button extends Component
 {
@@ -23,4 +24,14 @@ class Button extends Component
     {
         return view('components.button');
     }
+
+    //
+    // public function data()
+    // {
+    //     $url = 'https://fakestoreapi.com/products';
+    //     $response = Http::get($url);
+    //     $data = $response->json();
+    //     dd($data);
+    //     return $data;
+    // }
 }

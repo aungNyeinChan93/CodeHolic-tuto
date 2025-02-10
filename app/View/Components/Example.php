@@ -32,4 +32,9 @@ class Example extends Component
     {
         return 'test-function or method';
     }
+
+    public function users()
+    {
+        return User::get();
+    }
 }

@@ -100,7 +100,7 @@
                     <x-input-field class="col-span-2" label='name' placeholder="Enter password"
                         type='text'></x-input-field>
 
-                    <x-button href="{{ route('register') }}"></x-button>
+                    <x-button href="{{ route('register') }}">Register</x-button>
 
                 </div>
             </div>

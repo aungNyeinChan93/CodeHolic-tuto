@@ -6,4 +6,11 @@
         <li>{{ $user['name'] }}</li>
     @endforeach
     <p>{{ $any }}</p>
+
+    <div>
+        @foreach ($users() as $user)
+            <p>{{ $user->email }}</p>
+        @endforeach
+    </div>
+
 </div>
