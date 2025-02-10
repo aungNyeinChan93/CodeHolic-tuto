@@ -124,7 +124,14 @@ class TestController extends Controller
     // component
     public function component()
     {
-        $user = User::first();
-        $test = new Example($user);
+        // $user = User::first();
+        // $test = new Example($user);
+
+    }
+
+    // usersLists
+    public function usersLists()
+    {
+        return view('tests.alltest.users');
     }
 }

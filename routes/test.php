@@ -54,6 +54,8 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
     // test
     Route::get('component', [TestController::class, 'component'])->name('tests.component');
 
+    // userTable
+    Route::get('usersLists', [TestController::class, 'usersLists'])->name('tests.usersLists');
 
 
 

@@ -1,6 +1,4 @@
-@php
 
-@endphp
 
 <div class="card border shadow-sm rounded-lg my-4 relative h-[250px] ">
     <div class="card-header p-2 bg-gray-400 rounded-t-lg absolute top-0 w-full text-lg">

@@ -107,5 +107,21 @@
         </div>
 
 
+        <div>
+            <x-card>
+                <x-slot:title>title</x-slot:title>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime est nobis.
+                <x-slot:footer>This is footer</x-slot:footer>
+            </x-card>
+        </div>
+
+        <div>
+            <x-text-area2 id='something' title="text area 2" placeholder="This is Text Area" color='green'></x-text-area2>
+            <x-text-area2 class="border my-6" id="dasfs" title="text area 2" placeholder="This is Text Area"
+                color='red'></x-text-area2>
+        </div>
+
+
+
     </section>
 @endsection
