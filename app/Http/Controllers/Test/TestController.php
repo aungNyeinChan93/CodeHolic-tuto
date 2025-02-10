@@ -104,4 +104,16 @@ class TestController extends Controller
         return view('tests.alltest.Finexo.index');
 
     }
+
+    // login
+    public function login()
+    {
+        return view('tests.alltest.cars.login');
+    }
+
+    // register
+    public function register()
+    {
+        return view('tests.alltest.cars.register');
+    }
 }

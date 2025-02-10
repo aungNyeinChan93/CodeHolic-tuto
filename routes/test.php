@@ -9,6 +9,11 @@ use App\Models\User;
 use App\Jobs\TestJob;
 use Illuminate\Support\Facades\Route;
 
+Route::group(['prefix' => 'tests/cars',], function () {
+    Route::get('login', [TestController::class, 'login'])->name('cars.login');
+    Route::get('register', [TestController::class, 'register'])->name('cars.register');
+});
+
 
 Route::group(['controller' => TestController::class, 'prefix' => 'tests'], function () {
 
@@ -42,7 +47,7 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
     Route::post('login', [LoginController::class, 'store'])->name('login.store');
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-    // car
+    // template
     Route::get('cars', [TestController::class, 'index'])->name('cars.index');
     Route::get('template', [TestController::class, 'finexo'])->name('finexo.index');
 

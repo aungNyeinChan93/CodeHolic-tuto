@@ -4,6 +4,11 @@
 @section('title', 'Home Page')
 
 @section('content')
+
+    @php
+        $array = [1, 2, 3, 4];
+
+    @endphp
     <section>
 
         @if (session('success'))
@@ -19,5 +24,32 @@
         <div>
             @dump(app()->getLocale())
         </div>
+
+        <x-card>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore eaque voluptas optio in cupiditate nisi
+            necessitatibus aliquam delectus rerum.
+        </x-card>
+
+        <x-card />
+
+        <div class="bg-red-300 grid grid-cols-4 gap-5 px-3 py-2 rounded">
+            @foreach ([1, 2, 3, 4] as $item)
+                <x-container>
+                    (<span>{{ $item }}</span>)
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eaque suscipit dolorum cum voluptates
+                    dicta
+                    dolor
+                    corporis quasi omnis animi, maiores iusto recusandae amet possimus consequuntur eius libero incidunt
+                    quam!
+                    Velit
+                    fugiat tenetur voluptates cumque recusandae. Facilis nostrum aut distinctio?
+                </x-container>
+            @endforeach
+        </div>
+
+        <x-admin.card />
+        <div class="flex justify-between items-center">
+            @each('components.admin.card', $array, $item)
+        </div>
+
     </section>
 @endsection

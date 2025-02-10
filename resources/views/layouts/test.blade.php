@@ -42,7 +42,7 @@
                                 <li>
                                     <a class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                                         href="{{ route('users.create') }}">
-                                        Profile
+                                        Create user
                                     </a>
                                 </li>
 
@@ -121,7 +121,7 @@
             </div>
         </div>
     </header>
-    <main class="container mx-auto h-screen w-full">
+    <main class="container mx-auto h-100% w-full">
         @yield('content')
     </main>
 

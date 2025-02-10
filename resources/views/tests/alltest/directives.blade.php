@@ -81,6 +81,5 @@
         @foreach ($customers as $customer)
             @include('tests.alltest.customer', ['customer' => $customer])
         @endforeach
-
     </section>
 @endsection

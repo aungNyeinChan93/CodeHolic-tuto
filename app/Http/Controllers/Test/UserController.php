@@ -33,7 +33,7 @@ class UserController extends Controller
     {
         $fields = $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users,email',
             'password' => 'required',
             'password_confirmation' => 'required',
         ]);
@@ -59,10 +59,13 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
-        if (Hash::check($fields['password'], $user->password)) {
-            $user->update($fields);
+        if (!Hash::check($fields['password'], $user->password)) {
+            return back()->withErrors([
+                'password' => 'error',
+            ]);
         }
 
+        $user->update($fields);
         return to_route('users.index')->with('success', 'user update success');
     }
 
