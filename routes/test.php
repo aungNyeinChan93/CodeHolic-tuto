@@ -57,7 +57,8 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
     // userTable
     Route::get('usersLists', [TestController::class, 'usersLists'])->name('tests.usersLists');
 
-
+    // role add
+    Route::get('users/{user}/addAdmin', [TestController::class, 'add_admin'])->name('add_admin');
 
 });
 

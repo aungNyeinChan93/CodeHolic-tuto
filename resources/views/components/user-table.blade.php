@@ -24,7 +24,7 @@
                     <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ $user->created_at->format('d-m-Y h-m-s') }}
                     </td>
                     <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                        <x-button href="{{ route('home.index') }}">Back</x-button>
+                        <x-button href="{{ route('add_admin', $user->id) }}">Add Admin</x-button>
                     </td>
                 </tr>
             @endforeach

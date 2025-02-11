@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Test;
 
+use App\Models\Role;
 use App\Models\User;
 use App\Jobs\TestJob;
-use App\View\Components\Example;
 use Illuminate\Http\Request;
+use App\View\Components\Example;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 
@@ -133,5 +134,16 @@ class TestController extends Controller
     public function usersLists()
     {
         return view('tests.alltest.users');
+    }
+
+    // add_admin
+    public function add_admin(User $user)
+    {
+        // $adminRole = Role::where('id', 2)->first();
+        // $adminRole->users()->attach($user);
+        // return 'add admin success!';
+
+        $user->roles()->sync([2]);
+        return 'add admin success!';
     }
 }
