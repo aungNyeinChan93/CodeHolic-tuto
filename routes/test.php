@@ -60,6 +60,10 @@ Route::group(['controller' => TestController::class, 'prefix' => 'tests'], funct
     // role add
     Route::get('users/{user}/addAdmin', [TestController::class, 'add_admin'])->name('add_admin');
 
+    // layout
+    Route::get('layouts/app', [TestController::class, 'app_layout'])->name('app_layout');
+    Route::get('layouts/guest', [TestController::class, 'guest_layout'])->name('guest_layout');
+
 });
 
 // not found Page

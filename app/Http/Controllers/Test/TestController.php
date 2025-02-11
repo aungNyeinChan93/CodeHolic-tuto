@@ -144,6 +144,18 @@ class TestController extends Controller
         // return 'add admin success!';
 
         $user->roles()->sync([2]);
-        return 'add admin success!';
+        return back();
+    }
+
+    // app_layout
+    public function app_layout()
+    {
+        return view('tests.alltest.app_layout');
+    }
+
+    // guest_layout
+    public function guest_layout()
+    {
+        return view('tests.alltest.guest_layout');
     }
 }

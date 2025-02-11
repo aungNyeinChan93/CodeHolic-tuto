@@ -108,8 +108,8 @@
 
 
         <div>
-            <x-card>
-                <x-slot:title>title</x-slot:title>
+            <x-card id='sdfas' class="text-red" name='card-component'>
+                <x-slot:title color='green' class="bg-red-400">title</x-slot:title>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore maxime est nobis.
                 <x-slot:footer>This is footer</x-slot:footer>
             </x-card>
